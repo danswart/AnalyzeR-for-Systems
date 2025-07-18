@@ -211,37 +211,40 @@ chart_colors <- c(
 ui <- fluidPage(
   # Remove default bootstrap container constraints
   tags$head(
-    tags$style(HTML("
-      .container-fluid {
-        max-width: none !important;
-        padding: 0px;
-      }
-      .row {
-        margin-left: 0px;
-        margin-right: 0px;
-      }
-      .col-sm-12 {
-        padding-left: 5px;
-        padding-right: 5px;
-      }
-      .selectize-control.single .selectize-input:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        margin-top: -3px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 5px 5px 0 5px;
-        border-color: #333333 transparent transparent transparent;
-      }
-      .selectize-control.multi .selectize-input.has-items {
-        padding-right: 30px;
-      }
-    "))
+    tags$link(rel = "stylesheet", type = "text/css", href = "swart-20250709.css")
   ),
+  # tags$head(
+  #   tags$style(HTML("
+  #     .container-fluid {
+  #       max-width: none !important;
+  #       padding: 0px;
+  #     }
+  #     .row {
+  #       margin-left: 0px;
+  #       margin-right: 0px;
+  #     }
+  #     .col-sm-12 {
+  #       padding-left: 5px;
+  #       padding-right: 5px;
+  #     }
+  #     .selectize-control.single .selectize-input:after {
+  #       content: ' ';
+  #       display: block;
+  #       position: absolute;
+  #       top: 50%;
+  #       right: 15px;
+  #       margin-top: -3px;
+  #       width: 0;
+  #       height: 0;
+  #       border-style: solid;
+  #       border-width: 5px 5px 0 5px;
+  #       border-color: #333333 transparent transparent transparent;
+  #     }
+  #     .selectize-control.multi .selectize-input.has-items {
+  #       padding-right: 30px;
+  #     }
+  #   "))
+  # ),
 
   titlePanel("Upload Standardized Datasets Only"),
 
