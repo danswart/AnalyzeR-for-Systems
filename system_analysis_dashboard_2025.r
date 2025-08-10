@@ -207,6 +207,8 @@ chart_colors <- c(
   "#F1C40F"   # Sunshine yellow
 )
 
+
+
 # UI
 ui <- fluidPage(
   # Remove default bootstrap container constraints
@@ -623,6 +625,9 @@ ui <- fluidPage(
     )
   )
 )
+
+
+
 
 # Server
 server <- function(input, output, session) {
@@ -1208,6 +1213,11 @@ server <- function(input, output, session) {
     )
   ), rownames = FALSE)
 
+
+
+
+  #####  CHUNK 4 and 5  #####
+
   # Create reactive plot for run chart with IMPROVED data processing
   run_plot <- reactive({
     data <- filtered_data()
@@ -1321,6 +1331,12 @@ server <- function(input, output, session) {
         plot.margin = margin(t = 0, r = 0, b = 0, l = 0)
       )
   })
+
+
+
+
+
+  ##### CHUNK 5 #####
 
   # Render run chart
   output$run_chart <- renderPlot({
@@ -1440,6 +1456,7 @@ server <- function(input, output, session) {
   output$line_chart <- renderPlot({
     line_plot()
   })
+
 
   # FIXED: Create reactive plot for expectation chart with IMPROVED runs analysis and data processing
   # UPDATED: Added auto-correlation adjustment option with horizontal annotation boxes
@@ -1876,6 +1893,8 @@ server <- function(input, output, session) {
     return(p)
   })
 
+
+
   # Create reactive plot for bar chart with IMPROVED data processing
   bar_plot <- reactive({
     data <- filtered_data()
@@ -1968,6 +1987,8 @@ server <- function(input, output, session) {
   output$bar_chart <- renderPlot({
     bar_plot()
   })
+
+
 
   # Create reactive plot for trended expectation chart with IMPROVED data processing
   trended_plot <- reactive({
@@ -2181,6 +2202,8 @@ server <- function(input, output, session) {
         plot.margin = margin(t = 0, r = 0, b = 0, l = 0)
       )
   })
+
+
 
   # Create reactive plot for educational cohort tracking with IMPROVED data processing
   cohort_plot <- reactive({
@@ -2429,6 +2452,7 @@ server <- function(input, output, session) {
 
     return(final_result)
   })
+
 
   # Render expectation chart
   output$control_chart <- renderPlot({
